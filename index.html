@@ -4,35 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECE NTUA</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">ECE NTUA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Top Bar -->
+    <div id="top-bar" class="bg-dark text-white py-1">
+        <div class="container d-flex justify-content-between">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="/admin" class="text-white">Login</a></li>
+            </ul>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="https://www.ece.ntua.gr/gr" class="text-white">Ελληνικά</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header with Logo -->
+    <header class="bg-white border-bottom py-3">
+        <div class="container d-flex align-items-center">
+            <a href="https://www.ntua.gr/" class="d-flex align-items-center text-decoration-none text-dark">
+                <img src="https://www.ece.ntua.gr/themes/ecetheme/assets/img/pyrforos.svg" alt="NTUA logo" height="60" class="me-3">
+                <div>
+                    <div class="h5 mb-0">National Technical University of Athens</div>
+                    <div class="h6 mb-0">School of Electrical and Computer Engineering</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#people">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero text-center text-white d-flex flex-column justify-content-center align-items-center">
-        <h1>School of Electrical and Computer Engineering</h1>
+    <!-- Hero Section -->
+    <section class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
+        <h1 class="display-5">School of Electrical and Computer Engineering</h1>
         <p class="lead">National Technical University of Athens</p>
-    </header>
+    </section>
 
     <main class="container my-5">
-        <section id="about" class="mb-5">
-            <h2>About the School</h2>
-            <p>The School of Electrical and Computer Engineering of NTUA is one of the most prestigious institutions in Greece. We provide high quality education and cutting-edge research.</p>
+        <section id="education" class="mb-5">
+            <h2>Education</h2>
+            <p>Explore our undergraduate, postgraduate, and doctoral programs designed to foster innovation and academic excellence.</p>
+        </section>
+
+        <section id="research" class="mb-5">
+            <h2>Research</h2>
+            <p>Our laboratories and research groups drive technological progress in electrical and computer engineering.</p>
+        </section>
+
+        <section id="people" class="mb-5">
+            <h2>People</h2>
+            <p>Meet our dedicated faculty, researchers, and students who make our school a vibrant community.</p>
+        </section>
+
+        <section id="news" class="mb-5">
+            <h2>Latest News</h2>
+            <p>Stay informed about upcoming events, announcements, and achievements.</p>
         </section>
 
         <section id="contact" class="mb-5">
