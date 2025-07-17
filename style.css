@@ -1,0 +1,14 @@
+body {
+    font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.ece.ntua.gr/templates/modern/css/images/banner-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+#top-bar a {
+    text-decoration: none;
+}

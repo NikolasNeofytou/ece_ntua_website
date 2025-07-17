@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE NTUA Course Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div id="top-bar" class="bg-dark text-white py-1">
+        <div class="container d-flex justify-content-between">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="/admin" class="text-white">Login</a></li>
+            </ul>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="https://www.ece.ntua.gr/gr" class="text-white">Ελληνικά</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header with Logo -->
+    <header class="bg-white border-bottom py-3">
+        <div class="container d-flex align-items-center">
+            <a href="https://www.ntua.gr/" class="d-flex align-items-center text-decoration-none text-dark">
+                <img src="https://www.ece.ntua.gr/themes/ecetheme/assets/img/pyrforos.svg" alt="NTUA logo" height="60" class="me-3">
+                <div>
+                    <div class="h5 mb-0">National Technical University of Athens</div>
+                    <div class="h6 mb-0">School of Electrical and Computer Engineering</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Course Catalog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
+        <h1 class="display-5">Course Catalog 2025-2026</h1>
+        <p class="lead">Programme 50623</p>
+    </section>
+
+    <main class="container my-5">
+        <p class="mb-4">Below is an overview of courses offered in the upcoming academic year. This sample is inspired by the structure of the University of Groningen's catalog.</p>
+
+        <h2 class="mt-5">Year 1</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Title</th>
+                    <th scope="col">ECTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>ECE101</td><td>Introduction to Electrical Engineering</td><td>5</td></tr>
+                <tr><td>ECE102</td><td>Linear Algebra</td><td>5</td></tr>
+                <tr><td>ECE103</td><td>Programming Fundamentals</td><td>5</td></tr>
+            </tbody>
+        </table>
+
+        <h2 class="mt-5">Year 2</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Title</th>
+                    <th scope="col">ECTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>ECE201</td><td>Signals and Systems</td><td>5</td></tr>
+                <tr><td>ECE202</td><td>Data Structures</td><td>5</td></tr>
+                <tr><td>ECE203</td><td>Electromagnetics</td><td>5</td></tr>
+            </tbody>
+        </table>
+
+        <h2 class="mt-5">Electives</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Title</th>
+                    <th scope="col">ECTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>ECE301</td><td>Machine Learning</td><td>5</td></tr>
+                <tr><td>ECE302</td><td>Computer Networks</td><td>5</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="bg-light text-center py-3">
+        &copy; 2024 National Technical University of Athens
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
