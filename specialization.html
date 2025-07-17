@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialization Selector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top-bar" class="bg-dark text-white py-1">
+        <div class="container d-flex justify-content-between">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="/admin" class="text-white">Login</a></li>
+            </ul>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="https://www.ece.ntua.gr/gr" class="text-white">Ελληνικά</a></li>
+            </ul>
+        </div>
+    </div>
+    <header class="bg-white border-bottom py-3">
+        <div class="container d-flex align-items-center">
+            <a href="https://www.ntua.gr/" class="d-flex align-items-center text-decoration-none text-dark">
+                <img src="https://www.ece.ntua.gr/themes/ecetheme/assets/img/pyrforos.svg" alt="NTUA logo" height="60" class="me-3">
+                <div>
+                    <div class="h5 mb-0">National Technical University of Athens</div>
+                    <div class="h6 mb-0">School of Electrical and Computer Engineering</div>
+                </div>
+            </a>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Course Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="specialization.html">Specialization</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
+        <h1 class="display-5">Choose Your Specialization</h1>
+        <p class="lead">Select flows and courses to build your profile</p>
+    </section>
+    <main class="container my-5">
+        <div class="alert alert-info" role="alert">
+            You can select one <strong>full</strong> flow or two <strong>half</strong> flows.
+        </div>
+        <div id="flows">
+            <div class="card mb-4" data-flow="flow1">
+                <div class="card-body">
+                    <h3 class="card-title">Power Systems</h3>
+                    <div class="mb-2">
+                        <label class="me-3"><input type="radio" name="flow1mode" value="full"> Full</label>
+                        <label><input type="radio" name="flow1mode" value="half"> Half</label>
+                    </div>
+                    <ul class="list-unstyled ms-3">
+                        <li><label><input type="checkbox" data-course="PS1" disabled> Power Generation</label></li>
+                        <li><label><input type="checkbox" data-course="PS2" disabled> Power Electronics</label></li>
+                        <li><label><input type="checkbox" data-course="PS3" disabled> High Voltage</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-4" data-flow="flow2">
+                <div class="card-body">
+                    <h3 class="card-title">Telecommunications</h3>
+                    <div class="mb-2">
+                        <label class="me-3"><input type="radio" name="flow2mode" value="full"> Full</label>
+                        <label><input type="radio" name="flow2mode" value="half"> Half</label>
+                    </div>
+                    <ul class="list-unstyled ms-3">
+                        <li><label><input type="checkbox" data-course="TC1" disabled> Signal Processing</label></li>
+                        <li><label><input type="checkbox" data-course="TC2" disabled> Wireless Networks</label></li>
+                        <li><label><input type="checkbox" data-course="TC3" disabled> Antennas</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-4" data-flow="flow3">
+                <div class="card-body">
+                    <h3 class="card-title">Computer Science</h3>
+                    <div class="mb-2">
+                        <label class="me-3"><input type="radio" name="flow3mode" value="full"> Full</label>
+                        <label><input type="radio" name="flow3mode" value="half"> Half</label>
+                    </div>
+                    <ul class="list-unstyled ms-3">
+                        <li><label><input type="checkbox" data-course="CS1" disabled> Algorithms</label></li>
+                        <li><label><input type="checkbox" data-course="CS2" disabled> Databases</label></li>
+                        <li><label><input type="checkbox" data-course="CS3" disabled> Artificial Intelligence</label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button id="download" class="btn btn-primary">Download PDF</button>
+    </main>
+    <footer class="bg-light text-center py-3">
+        &copy; 2024 National Technical University of Athens
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+    (function() {
+        const selections = {};
+        function updateCourseCheckboxes(flow, mode) {
+            const card = document.querySelector(`[data-flow="${flow}"]`);
+            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (mode === 'full') {
+                    cb.checked = true;
+                    cb.disabled = true;
+                } else if (mode === 'half') {
+                    cb.checked = false;
+                    cb.disabled = false;
+                } else {
+                    cb.checked = false;
+                    cb.disabled = true;
+                }
+            });
+        }
+        function countSelections() {
+            const modes = document.querySelectorAll('input[type="radio"]:checked');
+            let full = 0, half = 0;
+            modes.forEach(r => {
+                if (r.value === 'full') full++; else if (r.value === 'half') half++;
+            });
+            return {full, half};
+        }
+        function validateSelections() {
+            const counts = countSelections();
+            if (counts.full > 1 || counts.half > 2 || (counts.full === 1 && counts.half > 0)) {
+                return false;
+            }
+            return true;
+        }
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const flow = radio.name.replace('mode', '');
+                updateCourseCheckboxes(flow, radio.value);
+                if (!validateSelections()) {
+                    alert('You may select one full flow OR up to two half flows.');
+                    radio.checked = false;
+                    updateCourseCheckboxes(flow, null);
+                }
+            });
+        });
+        document.getElementById('download').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text('Selected Specialization', 10, 10);
+            let y = 20;
+            document.querySelectorAll('[data-flow]').forEach(card => {
+                const flow = card.getAttribute('data-flow');
+                const modeRadio = card.querySelector('input[type="radio"]:checked');
+                if (!modeRadio) return;
+                const flowTitle = card.querySelector('.card-title').textContent;
+                doc.text(flowTitle + ' (' + modeRadio.value + ')', 10, y);
+                y += 10;
+                card.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    if (cb.checked) {
+                        doc.text('- ' + cb.parentElement.textContent.trim(), 20, y);
+                        y += 10;
+                    }
+                });
+            });
+            doc.save('specialization.pdf');
+        });
+    })();
+    </script>
+</body>
+</html>
