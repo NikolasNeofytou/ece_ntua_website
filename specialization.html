@@ -1,175 +1,353 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Specialization Selector</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700,900&amp;display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
     <div id="top-bar" class="bg-dark text-white py-1">
+
         <div class="container d-flex justify-content-between">
+
             <ul class="list-inline mb-0">
+
                 <li class="list-inline-item"><a href="/admin" class="text-white">Login</a></li>
+
             </ul>
+
             <ul class="list-inline mb-0">
+
                 <li class="list-inline-item"><a href="https://www.ece.ntua.gr/gr" class="text-white">Ελληνικά</a></li>
+
             </ul>
+
         </div>
+
     </div>
+
     <header class="bg-white border-bottom py-3">
+
         <div class="container d-flex align-items-center">
+
             <a href="https://www.ntua.gr/" class="d-flex align-items-center text-decoration-none text-dark">
+
                 <img src="https://www.ece.ntua.gr/themes/ecetheme/assets/img/pyrforos.svg" alt="NTUA logo" height="60" class="me-3">
+
                 <div>
+
                     <div class="h5 mb-0">National Technical University of Athens</div>
+
                     <div class="h6 mb-0">School of Electrical and Computer Engineering</div>
+
                 </div>
+
             </a>
+
         </div>
+
     </header>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
         <div class="container">
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
+
             <div class="collapse navbar-collapse" id="mainNav">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
                     <li class="nav-item"><a class="nav-link" href="catalog.html">Course Catalog</a></li>
+
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="specialization.html">Specialization</a></li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
+
     <section class="hero d-flex flex-column justify-content-center align-items-center text-white text-center">
+
         <h1 class="display-5">Choose Your Specialization</h1>
+
         <p class="lead">Select flows and courses to build your profile</p>
+
     </section>
+
     <main class="container my-5">
+
         <div class="alert alert-info" role="alert">
+
             You can select one <strong>full</strong> flow or two <strong>half</strong> flows.
+
         </div>
+
         <div id="flows">
+
             <div class="card mb-4" data-flow="flow1">
+
                 <div class="card-body">
+
                     <h3 class="card-title">Power Systems</h3>
+
                     <div class="mb-2">
+
                         <label class="me-3"><input type="radio" name="flow1mode" value="full"> Full</label>
+
                         <label><input type="radio" name="flow1mode" value="half"> Half</label>
+
                     </div>
+
                     <ul class="list-unstyled ms-3">
-                        <li><label><input type="checkbox" data-course="PS1" disabled> Power Generation</label></li>
-                        <li><label><input type="checkbox" data-course="PS2" disabled> Power Electronics</label></li>
-                        <li><label><input type="checkbox" data-course="PS3" disabled> High Voltage</label></li>
+
+                        <li><label><input type="checkbox" data-course="PS1" data-semester="7" disabled> Power Generation (Sem 7)</label></li>
+
+                        <li><label><input type="checkbox" data-course="PS2" data-semester="7" disabled> Power Electronics (Sem 7)</label></li>
+
+                        <li><label><input type="checkbox" data-course="PS3" data-semester="8" disabled> High Voltage Engineering (Sem 8)</label></li>
+
                     </ul>
+
                 </div>
+
             </div>
+
             <div class="card mb-4" data-flow="flow2">
+
                 <div class="card-body">
+
                     <h3 class="card-title">Telecommunications</h3>
+
                     <div class="mb-2">
+
                         <label class="me-3"><input type="radio" name="flow2mode" value="full"> Full</label>
+
                         <label><input type="radio" name="flow2mode" value="half"> Half</label>
+
                     </div>
+
                     <ul class="list-unstyled ms-3">
-                        <li><label><input type="checkbox" data-course="TC1" disabled> Signal Processing</label></li>
-                        <li><label><input type="checkbox" data-course="TC2" disabled> Wireless Networks</label></li>
-                        <li><label><input type="checkbox" data-course="TC3" disabled> Antennas</label></li>
+
+                        <li><label><input type="checkbox" data-course="TC1" data-semester="5" disabled> Signal Processing (Sem 5)</label></li>
+
+                        <li><label><input type="checkbox" data-course="TC2" data-semester="6" disabled> Wireless Networks (Sem 6)</label></li>
+
+                        <li><label><input type="checkbox" data-course="TC3" data-semester="7" disabled> Antennas (Sem 7)</label></li>
+
                     </ul>
+
                 </div>
+
             </div>
+
             <div class="card mb-4" data-flow="flow3">
+
                 <div class="card-body">
+
                     <h3 class="card-title">Computer Science</h3>
+
                     <div class="mb-2">
+
                         <label class="me-3"><input type="radio" name="flow3mode" value="full"> Full</label>
+
                         <label><input type="radio" name="flow3mode" value="half"> Half</label>
+
                     </div>
+
                     <ul class="list-unstyled ms-3">
-                        <li><label><input type="checkbox" data-course="CS1" disabled> Algorithms</label></li>
-                        <li><label><input type="checkbox" data-course="CS2" disabled> Databases</label></li>
-                        <li><label><input type="checkbox" data-course="CS3" disabled> Artificial Intelligence</label></li>
+
+                        <li><label><input type="checkbox" data-course="CS1" data-semester="5" disabled> Algorithms (Sem 5)</label></li>
+
+                        <li><label><input type="checkbox" data-course="CS2" data-semester="6" disabled> Databases (Sem 6)</label></li>
+
+                        <li><label><input type="checkbox" data-course="CS3" data-semester="7" disabled> Artificial Intelligence (Sem 7)</label></li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
         <button id="download" class="btn btn-primary">Download PDF</button>
+
     </main>
+
     <footer class="bg-light text-center py-3">
+
         &copy; 2024 National Technical University of Athens
+
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script>
+
     (function() {
+
+        const logoData = 'data:image/png;base64,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';
+
         const selections = {};
+
         function updateCourseCheckboxes(flow, mode) {
+
             const card = document.querySelector(`[data-flow="${flow}"]`);
+
             const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+
             checkboxes.forEach(cb => {
+
                 if (mode === 'full') {
+
                     cb.checked = true;
+
                     cb.disabled = true;
+
                 } else if (mode === 'half') {
+
                     cb.checked = false;
+
                     cb.disabled = false;
+
                 } else {
+
                     cb.checked = false;
+
                     cb.disabled = true;
+
                 }
+
             });
+
         }
+
         function countSelections() {
+
             const modes = document.querySelectorAll('input[type="radio"]:checked');
+
             let full = 0, half = 0;
+
             modes.forEach(r => {
+
                 if (r.value === 'full') full++; else if (r.value === 'half') half++;
+
             });
+
             return {full, half};
+
         }
+
         function validateSelections() {
+
             const counts = countSelections();
+
             if (counts.full > 1 || counts.half > 2 || (counts.full === 1 && counts.half > 0)) {
+
                 return false;
+
             }
+
             return true;
+
         }
+
         document.querySelectorAll('input[type="radio"]').forEach(radio => {
+
             radio.addEventListener('change', () => {
+
                 const flow = radio.name.replace('mode', '');
+
                 updateCourseCheckboxes(flow, radio.value);
+
                 if (!validateSelections()) {
+
                     alert('You may select one full flow OR up to two half flows.');
+
                     radio.checked = false;
+
                     updateCourseCheckboxes(flow, null);
+
                 }
+
             });
+
         });
+
         document.getElementById('download').addEventListener('click', () => {
+
             const { jsPDF } = window.jspdf;
+
             const doc = new jsPDF();
+            doc.addImage(logoData, 'PNG', 160, 10, 40, 40);
             doc.text('Selected Specialization', 10, 10);
-            let y = 20;
+            doc.text('Date: ' + new Date().toLocaleDateString(), 10, 20);
+            let y = 30;
+
             document.querySelectorAll('[data-flow]').forEach(card => {
+
                 const flow = card.getAttribute('data-flow');
+
                 const modeRadio = card.querySelector('input[type="radio"]:checked');
+
                 if (!modeRadio) return;
+
                 const flowTitle = card.querySelector('.card-title').textContent;
+
                 doc.text(flowTitle + ' (' + modeRadio.value + ')', 10, y);
+
                 y += 10;
+
                 card.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+
                     if (cb.checked) {
-                        doc.text('- ' + cb.parentElement.textContent.trim(), 20, y);
+
+                        const courseText = cb.parentElement.textContent.trim();
+                        const sem = cb.dataset.semester ? ' (Sem ' + cb.dataset.semester + ')' : '';
+                        doc.text('- ' + courseText + sem, 20, y);
                         y += 10;
+
                     }
+
                 });
+
             });
+
             doc.save('specialization.pdf');
+
         });
+
     })();
+
     </script>
+
 </body>
+
 </html>
+
